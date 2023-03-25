@@ -15,6 +15,10 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
+
+import img1 from '../img/img1.png'
+
+
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -27,6 +31,7 @@ const ExpandMore = styled((props) => {
 }));
 
 export default function Product() {
+
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -42,19 +47,24 @@ export default function Product() {
           </Avatar>
         }
         action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
+          <Typography
+          variant='h5'
+          color='textSecondary'>
+            {50}
+
+          </Typography>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title="Shoes"
+        subheader="In Stock"
       />
       <CardMedia
         component="img"
         height="194"
-        image="/static/images/cards/paella.jpg"
+        
+        image="https://media.istockphoto.com/id/1367357589/es/foto/cielo-rojo-en-forma-de-coraz%C3%B3n-al-atardecer-hermoso-paisaje-con-flores-me-encanta-el-fondo-con.jpg?s=1024x1024&w=is&k=20&c=JIayCp7qYDfMz5D3fpcSdB_HhIN6XXRDzHIoHQKNsWc="
         alt="Paella dish"
       />
+      
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           This impressive paella is a perfect party dish and a fun meal to cook
