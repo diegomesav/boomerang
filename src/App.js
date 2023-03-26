@@ -1,10 +1,11 @@
 import Product from './components/Product';
 import './App.css';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
     <div className="App">
-      <h1>Boomerang</h1>
+      <NavBar/>
       <Product/>
     </div>
   );
