@@ -13,6 +13,7 @@ import { red } from '@mui/material/colors';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { AddShoppingCart } from '@mui/icons-material';
 import accounting from 'accounting';
+import { makeStyles } from '@material-ui/core';
 
 
 const ExpandMore = styled((props) => {
@@ -26,8 +27,37 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function Product() {
+const useStyles = makeStyles((theme) =>({
+  root:{
+    maxWidth: 345,
+    marginTop: "2rem"
+  },
+  action:{
+    marginTop: "1rem",
+  },
+  media:{
+    height:0,
+    paddingTop:"56.25%",
+  },
+  expand:{
+    transform:"rotate(0deg)",
+    marginLeft:"auto",
+    transition: theme.transitions.create("transform", {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpen:{
+    transform:"rotate(180deg)",
+  },
 
+  AppBar:{
+    backgroundColor: "whitesmoke",
+    boxShadow: "none",
+  },
+}));
+
+export default function Product() {
+  const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -35,7 +65,7 @@ export default function Product() {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card className={classes.root}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -44,6 +74,7 @@ export default function Product() {
         }
         action={
           <Typography
+          
           variant='h5'
           color='textSecondary'>
             {accounting.formatMoney(50)}
@@ -54,6 +85,7 @@ export default function Product() {
         subheader="In Stock"
       />
       <CardMedia
+        
         component="img"
         height="194"
         
@@ -77,6 +109,7 @@ export default function Product() {
             <p>&#11088;</p>
           ))
         }
+        
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
@@ -85,6 +118,7 @@ export default function Product() {
         >
           <ExpandMoreIcon />
         </ExpandMore>
+      
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
