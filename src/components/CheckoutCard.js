@@ -14,6 +14,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { AddShoppingCart } from '@mui/icons-material';
 import accounting from 'accounting';
 import { makeStyles } from '@material-ui/core';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 const ExpandMore = styled((props) => {
@@ -39,24 +40,18 @@ const useStyles = makeStyles((theme) =>({
     height:0,
     paddingTop:"56.25%",
   },
-  expand:{
-    transform:"rotate(0deg)",
-    marginLeft:"auto",
-    transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest,
-    }),
+  cardActions:{
+    display: "flex",
+    justifyContent: "space-between",
+    textAlign: "center",
   },
-  expandOpen:{
-    transform:"rotate(180deg)",
-  },
+  cardRating: {
+    display: "flex"
+  }
 
-  AppBar:{
-    backgroundColor: "whitesmoke",
-    boxShadow: "none",
-  },
 }));
 
-export default function Product({product:{id, nameProduct, productType, price, ratin, image, description}}) {
+export default function CheckoutCard({product:{id, nameProduct, productType, price, ratin, image, description}}) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -93,38 +88,21 @@ export default function Product({product:{id, nameProduct, productType, price, r
         alt={nameProduct}
       />
       
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          {productType}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to Cart" >
-          <AddShoppingCart fontSize='large' />
+      <CardActions disableSpacing className={classes.cardActions}>
+        <div className={classes.cardRating}>
+            {
+            Array(ratin)
+            .fill()
+            .map((_, i) =>(
+                <p>&#11088;</p>
+            ))
+            }
+        </div>
+        <IconButton>
+            <DeleteIcon fontSize='large'/>
         </IconButton>
-        {
-          Array(ratin)
-          .fill()
-          .map((_, i) =>(
-            <p>&#11088;</p>
-          ))
-        }
         
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-      
       </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography>{description}</Typography>
-        </CardContent>
-      </Collapse>
     </Card>
   );
 }
