@@ -10,6 +10,7 @@ import logo from "../assets/logo.png"
 import { makeStyles } from '@material-ui/core/styles';
 import { ShoppingCart } from '@mui/icons-material';
 import { Badge } from '@material-ui/core';
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
     root:{
@@ -38,15 +39,17 @@ export default function NavBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" class={classes.AppBar}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <img src={logo} className = {classes.image}/>
-          </IconButton>
+          <Link to="/">
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+            >
+              <img src={logo} className = {classes.image}/>
+            </IconButton>
+          </Link>
           <div className={classes.grow}/>
           <Typography variant="h6" component="div" color="primary">
             Hola Boomerang
@@ -55,11 +58,13 @@ export default function NavBar() {
             <Button color="primary" variant="text" >
               <strong>Sign In</strong>
             </Button>
-            <IconButton>
-              <Badge badgeContent={20} color='secondary'>
-              <ShoppingCart fontSize='large' color='primary'/>
-              </Badge>
-            </IconButton>
+            <Link to="/checkout-page">
+              <IconButton>
+                <Badge badgeContent={20} color='secondary'>
+                <ShoppingCart fontSize='large' color='primary'/>
+                </Badge>
+              </IconButton>
+            </Link>
 
           </div>
         </Toolbar>
