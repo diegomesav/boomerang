@@ -70,7 +70,7 @@ export default function Product({product:{id, nameProduct, productType, price, r
     dispatch({
       type: actionTypes.ADD_TO_BASKET,
       item: {
-        id: 1,
+        id,
         nameProduct, 
         productType,
         price,

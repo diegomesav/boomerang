@@ -10,11 +10,11 @@ import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { AddShoppingCart } from '@mui/icons-material';
 import accounting from 'accounting';
 import { makeStyles } from '@material-ui/core';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useStateValue } from "../StateProvider";
+import { actionTypes } from '../reducer';
 
 
 const ExpandMore = styled((props) => {
@@ -54,10 +54,18 @@ const useStyles = makeStyles((theme) =>({
 export default function CheckoutCard({product:{id, nameProduct, productType, price, ratin, image, description}}) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  const [{basket}, dispatch] = useStateValue();
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  const removeItem = () =>{
+    dispatch({
+      type: actionTypes.REMOVE_ITEM,
+      id: id,
+    })
+  }
 
   return (
     <Card className={classes.root}>
@@ -99,7 +107,7 @@ export default function CheckoutCard({product:{id, nameProduct, productType, pri
             }
         </div>
         <IconButton>
-            <DeleteIcon fontSize='large'/>
+            <DeleteIcon fontSize='large' onClick={removeItem}/>
         </IconButton>
         
       </CardActions>
