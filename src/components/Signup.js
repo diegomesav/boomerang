@@ -15,7 +15,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import {Link as RouteLink, useNavigate} from 'react-router-dom'
-import { auth } from '../Firebase';
+//import { auth } from '../Firebase';
 
 function Copyright(props) {
   return (
@@ -39,13 +39,13 @@ export default function SignUp() {
     const navigate = useNavigate();
 
     const signup = (e) => {
-        e.preventDefault();
+        /*e.preventDefault();
         auth.createUserWithEmailAndPassword(email, password).then((auth) => {
             console.log(auth);
             if(auth){
                 navigate.push("/")
             }
-        }).catch(err => alert(err.message))
+        }).catch(err => alert(err.message))*/
     }
     
   const handleSubmit = (event) => {
