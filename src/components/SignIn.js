@@ -14,7 +14,10 @@ import Avatar from '@mui/material/Avatar';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-import {Link as RouteLink, useHistory} from 'react-router-dom'
+import {Link as RouteLink , useNavigate} from 'react-router-dom'
+import { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../firebase';
 
 function Copyright(props) {
   return (
@@ -32,6 +35,21 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
+
+  const [email, setEmail] = useState("");
+    const [password, setPasword] = useState("");
+    const navigate = useNavigate();
+
+    const signin = (e) => {
+      e.preventDefault();
+      signInWithEmailAndPassword(auth,email, password).then((auth) => {
+          console.log(auth);
+          if(auth){
+              navigate("/")
+          }
+      }).catch(err => alert(err.message))
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -61,6 +79,8 @@ export default function SignIn() {
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
+              value={email}
+              onChange={e=>setEmail(e.target.value)}  
               margin="normal"
               required
               fullWidth
@@ -71,6 +91,8 @@ export default function SignIn() {
               autoFocus
             />
             <TextField
+              value={password}
+              onChange={e=>setPasword(e.target.value)} 
               margin="normal"
               required
               fullWidth
@@ -89,6 +111,7 @@ export default function SignIn() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              onClick={signin}
             >
               Sign In
             </Button>
