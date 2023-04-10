@@ -73,7 +73,7 @@ export default function NavBar() {
           </Link>
           <div className={classes.grow}/>
           <Typography variant="h6" component="div" color="primary">
-            Hola {user ? user.email : "Boomerang"}
+            Hola {user ? user.email : "Bomerang"}
           </Typography>
           <div className={classes.button} >
             <Link to="/signin">
