@@ -38,6 +38,7 @@ export default function SignUp() {
 
     const [email, setEmail] = useState("");
     const [password, setPasword] = useState("");
+    
     const navigate = useNavigate();
 
     const signup = (e) => {
