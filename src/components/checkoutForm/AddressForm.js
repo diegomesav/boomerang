@@ -3,17 +3,13 @@ import React from 'react'
 import {useForm, FormProvider,useFormContext, Controller, } from 'react-hook-form'
 import AddressInput from './AddressInput';
 import {Link} from 'react-router-dom'
-//import { useFormContext, Controller } from 'react-hook-form'
+import { useStateValue } from "../../StateProvider";
+import { actionTypes } from '../../reducer';
 
-const AddressForm = () => {
+const AddressForm = ({nextStep}) => {
   const methods = useForm();
-  const handleSubmit = (e) => {
-    console.log(e)
-  }
+  const [{shippingData},dispatch] = useStateValue();
 
-  const nombre = (e) =>{
-    console.log(e)
-  }
     
   
 
@@ -35,7 +31,14 @@ const AddressForm = () => {
         </form>
         <div style={{display: "flex", justifyContent: "space-between", marginTop: "1rem"}}>
           <Button component={Link} to="/checkout-page">back to checkout page</Button>
-          <Button onClick={methods.handleSubmit(data => {console.log(data)})}type="submit" variant="contained" color="primary">next</Button>
+          <Button  type="submit" variant="contained" color="primary"
+          onClick={methods.handleSubmit(data => {
+            dispatch({
+              type: actionTypes.SET_SHIPPINGDATA,
+              shippingData: data,
+            });
+            nextStep();
+          })}>next</Button>
         </div>
       </FormProvider>
     </>
