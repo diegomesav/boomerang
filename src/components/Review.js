@@ -1,7 +1,8 @@
 import React from "react";
-import {List,Typography} from '@material-ui/core'
+import {List,ListItem,ListItemText,Typography} from '@material-ui/core'
 import { useStateValue } from "../StateProvider";
 import { getBasketTotal } from "../reducer";
+import accounting from "accounting";
 
 
 const Review = (nextStep, backStep) => {
@@ -12,7 +13,21 @@ const Review = (nextStep, backStep) => {
         Order Summary
       </Typography>
       <List disablePadding>
-        {getBasketTotal(basket)}
+        {
+          basket?.map(product => (
+            <ListItem key={product.nameProduc}>
+              <ListItemText primary={product.nameProduct} secondary={""}/>
+              <Typography variant="body2"></Typography>
+              {accounting.formatMoney(product.price)}
+            </ListItem>
+          ))
+        }
+        <ListItem>
+          <ListItemText primary="Total: "/>
+          <Typography variant="subtitle1">
+            {accounting.formatMoney(getBasketTotal(basket))}
+          </Typography>
+        </ListItem>
       </List>
         
     </div>

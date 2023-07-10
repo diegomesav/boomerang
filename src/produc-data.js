@@ -14,7 +14,7 @@ const products =[
         nameProduct: "mug",
         productType: "Personal",
         price: 13000,
-        ratin: 5,
+        ratin: 1,
         image: "https://sistemaboomerang.000webhostapp.com/imgTiendaBoomerang/mug.jpg",
         description: "imagen2",
 
