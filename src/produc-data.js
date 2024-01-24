@@ -6,7 +6,7 @@ const products =[
         price: 56000,
         ratin: 4,
         image:"https://sistemaboomerang.000webhostapp.com/imgTiendaBoomerang/Album.jpg",
-        description:"imagen1",
+        description:"Personalizados con fotos, nombres o la idea que te guste. El album tiene capacidad para almacenar fotos en tamaño 15x22 y 20x30.",
 
     },
     {
@@ -14,9 +14,9 @@ const products =[
         nameProduct: "mug",
         productType: "Personal",
         price: 13000,
-        ratin: 1,
+        ratin: 4,
         image: "https://sistemaboomerang.000webhostapp.com/imgTiendaBoomerang/mug.jpg",
-        description: "imagen2",
+        description: "Mágicos y tradicionales. Son ideales para toda ocasión.",
 
     },
     {
@@ -26,7 +26,7 @@ const products =[
         price: 7000,
         ratin: 3,
         image: "https://sistemaboomerang.000webhostapp.com/imgTiendaBoomerang/lapicero.jpg",
-        description: "imagen3",
+        description: "Personalizados. Son funcionales como recordatorios.",
 
     },
     {
@@ -36,7 +36,7 @@ const products =[
         price: 6000,
         ratin: 4,
         image: "https://sistemaboomerang.000webhostapp.com/imgTiendaBoomerang/llavero.jpg",
-        description: "imagen4",
+        description: "Rectangulares y circulares. Puedes personalizarlo con una imagen en cada lado.",
 
     },
     {
@@ -46,7 +46,7 @@ const products =[
         price: 35000,
         ratin: 4,
         image: "https://sistemaboomerang.000webhostapp.com/imgTiendaBoomerang/camiseta.jpg",
-        description: "imagen4",
+        description: "Sublimados para niños y adultos. Se pueden encargar por unidad o al por mayor para tus eventos familiares.",
 
     },
     {
@@ -56,7 +56,7 @@ const products =[
         price: 475000,
         ratin: 4,
         image: "https://sistemaboomerang.000webhostapp.com/imgTiendaBoomerang/photobook.jpg",
-        description: "imagen4",
+        description: "Laminado en mate o brillante. Viene en pasta dura por ambos lados o un material espacial en laparte posterior.",
 
     },
 

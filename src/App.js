@@ -5,7 +5,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import { Typography } from '@material-ui/core';
 import CheckoutPage from './components/CheckoutPage';
-import { Routes, BrowserRouter as Router, Route } from 'react-router-dom';
+import {Navigate, Routes, BrowserRouter as Router, Route } from 'react-router-dom';
 import SignIn from './components/SignIn';
 import SignUp from './components/Signup';
 import { useEffect } from "react";
@@ -13,6 +13,8 @@ import { auth } from "./firebase";
 import { actionTypes } from "./reducer";
 import { useStateValue } from './StateProvider';
 import Checkout from "./components/checkoutForm/Checkout";
+
+
 
 
 function App() {
@@ -49,11 +51,14 @@ function App() {
 
         <Route path='/' element={<Products/>}> 
         </Route>
+
+        <Route render={() => <Navigate to='/' />} />
       </Routes>
       
       
     </div>
     </Router>
+    
   );
 }
 

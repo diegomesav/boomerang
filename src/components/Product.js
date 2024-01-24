@@ -86,7 +86,7 @@ export default function Product({product:{id, nameProduct, productType, price, r
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+            B
           </Avatar>
         }
         action={

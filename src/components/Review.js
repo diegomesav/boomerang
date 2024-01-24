@@ -16,7 +16,7 @@ const Review = (nextStep, backStep) => {
         {
           basket?.map(product => (
             <ListItem key={product.nameProduc}>
-              <ListItemText primary={product.nameProduct} secondary={""}/>
+              <ListItemText primary={product.nameProduct} />
               <Typography variant="body2"></Typography>
               {accounting.formatMoney(product.price)}
             </ListItem>

@@ -40,7 +40,7 @@ export default function NavBar() {
   const classes = useStyles();
   const [{basket, user}, dispatch] = useStateValue();
   const navigate = useNavigate();
-
+  
   const handleAuth = ()=>{
     if(user){
       auth.signOut();
@@ -73,7 +73,7 @@ export default function NavBar() {
           </Link>
           <div className={classes.grow}/>
           <Typography variant="h6" component="div" color="primary">
-            Hola {user ? user.email : "Boomerang"}
+            {user ? user.email : "Boomerang"}
           </Typography>
           <div className={classes.button} >
             <Link to="/signin">
@@ -90,8 +90,10 @@ export default function NavBar() {
             </Link>
 
           </div>
+          
         </Toolbar>
       </AppBar>
+
     </Box>
   );
 }
