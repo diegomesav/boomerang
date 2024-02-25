@@ -18,7 +18,7 @@ import Checkout from "./components/checkoutForm/Checkout";
 
 
 function App() {
-
+/*"homepage": "https://boomerangfotografia.000webhostapp.com/",*/
   const [{user}, dispatch] = useStateValue();
   useEffect(()=>{
     auth.onAuthStateChanged((authUser) => {
