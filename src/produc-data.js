@@ -5,7 +5,7 @@ const products =[
         productType: "Familiar",
         price: 56000,
         ratin: 4,
-        image:"https://sistemaboomerang.000webhostapp.com/imgTiendaBoomerang/Album.jpg",
+        image:"./img/Album.jpg",
         description:"Personalizados con fotos, nombres o la idea que te guste. El album tiene capacidad para almacenar fotos en tamaño 15x22 y 20x30.",
 
     },
@@ -15,7 +15,7 @@ const products =[
         productType: "Personal",
         price: 13000,
         ratin: 4,
-        image: "https://sistemaboomerang.000webhostapp.com/imgTiendaBoomerang/mug.jpg",
+        image: "./img/mug.jpg",
         description: "Mágicos y tradicionales. Son ideales para toda ocasión.",
 
     },
@@ -25,7 +25,7 @@ const products =[
         productType: "personal",
         price: 7000,
         ratin: 3,
-        image: "https://sistemaboomerang.000webhostapp.com/imgTiendaBoomerang/lapicero.jpg",
+        image: "./img/lapicero.jpg",
         description: "Personalizados. Son funcionales como recordatorios.",
 
     },
@@ -35,7 +35,7 @@ const products =[
         productType: "Personal",
         price: 6000,
         ratin: 4,
-        image: "https://sistemaboomerang.000webhostapp.com/imgTiendaBoomerang/llavero.jpg",
+        image: "./img/llavero.jpg",
         description: "Rectangulares y circulares. Puedes personalizarlo con una imagen en cada lado.",
 
     },
@@ -45,7 +45,7 @@ const products =[
         productType: "Personal",
         price: 35000,
         ratin: 4,
-        image: "https://sistemaboomerang.000webhostapp.com/imgTiendaBoomerang/camiseta.jpg",
+        image: "./img/camiseta.jpg",
         description: "Sublimados para niños y adultos. Se pueden encargar por unidad o al por mayor para tus eventos familiares.",
 
     },
@@ -55,7 +55,7 @@ const products =[
         productType: "Familiar",
         price: 475000,
         ratin: 4,
-        image: "https://sistemaboomerang.000webhostapp.com/imgTiendaBoomerang/photobook.jpg",
+        image: "./img/photobook.jpg",
         description: "Laminado en mate o brillante. Viene en pasta dura por ambos lados o un material espacial en laparte posterior.",
 
     },
