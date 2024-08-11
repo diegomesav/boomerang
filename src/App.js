@@ -3,7 +3,7 @@ import Product from './components/Product';
 import Products from './components/Products';
 import './App.css';
 import NavBar from './components/NavBar';
-import { Typography } from '@material-ui/core';
+import { Typography } from '@mui/material'
 import CheckoutPage from './components/CheckoutPage';
 import {Navigate, Routes, BrowserRouter as Router, Route } from 'react-router-dom';
 import SignIn from './components/SignIn';
@@ -15,7 +15,8 @@ import { useStateValue } from './StateProvider';
 import Checkout from "./components/checkoutForm/Checkout";
 
 
-
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+const theme = createTheme();
 
 function App() {
 /*"homepage": "https://boomerangfotografia.000webhostapp.com/",*/
@@ -35,7 +36,9 @@ function App() {
     <Router>
     <div className="App">
       
-      <NavBar/>
+    <ThemeProvider theme={theme}>
+            <NavBar />
+          </ThemeProvider>
       <Routes>
         <Route path='/signup' element={<SignUp/>}>  
         </Route>
@@ -43,13 +46,22 @@ function App() {
         <Route path='/signin' element={<SignIn/>}>  
         </Route>
 
-        <Route path='/checkout-page' element={<CheckoutPage/>}>  
+        <Route path='/checkout-page' element={
+          <ThemeProvider theme={theme}>
+            <CheckoutPage />
+          </ThemeProvider>}>  
         </Route>
 
-        <Route path='/checkout' element={<Checkout/>}>  
+        <Route path='/checkout' element={
+          <ThemeProvider theme={theme}>
+            <Checkout />
+          </ThemeProvider>}>  
         </Route>
 
-        <Route path='/' element={<Products/>}> 
+        <Route path='/' element={
+          <ThemeProvider theme={theme}>
+            <Products />
+          </ThemeProvider>}> 
         </Route>
 
         <Route render={() => <Navigate to='/' />} />

@@ -7,13 +7,14 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from "../assets/logo.png"
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles'
 import { ShoppingCart } from '@mui/icons-material';
-import { Badge } from '@material-ui/core';
+import { Badge } from '@mui/material'
 import { Link, useNavigate } from 'react-router-dom';
 import { useStateValue } from "../StateProvider";
 import { auth } from '../firebase';
 import { actionTypes } from '../reducer';
+
 
 const useStyles = makeStyles((theme) => ({
     root:{

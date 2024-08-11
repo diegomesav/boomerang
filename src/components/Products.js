@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Product from './Product';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles } from '@mui/styles'
 import products from '../produc-data';
 
 const Item = styled(Paper)(({ theme }) => ({

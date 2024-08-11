@@ -1,7 +1,7 @@
 import React from "react";
 import useStyles from './styles'
 //import { Typography } from "@mui/material";
-import { Paper, Step, StepLabel, Stepper, Typography } from "@material-ui/core";
+import { Paper, Step, StepLabel, Stepper, Typography } from '@mui/material'
 import { useState } from "react";
 import AddressForm from "./AddressForm";
 import PaymentForm from "./PaymentForm";

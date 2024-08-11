@@ -13,7 +13,7 @@ import { red } from '@mui/material/colors';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { AddShoppingCart } from '@mui/icons-material';
 import accounting from 'accounting';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles } from '@mui/styles'
 import { actionTypes } from '../reducer';
 import { useStateValue } from '../StateProvider';
 

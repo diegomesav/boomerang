@@ -1,4 +1,4 @@
-import { AppBar, makeStyles } from "@material-ui/core";
+import { AppBar, makeStyles } from '@mui/styles'
 
 export default makeStyles((theme) => ({
     AppBar: {
